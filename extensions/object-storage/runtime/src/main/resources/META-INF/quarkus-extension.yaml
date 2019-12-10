@@ -1,0 +1,9 @@
+---
+name: "Object Storage - Object Storage client"
+metadata:
+  keywords:
+  - "object-storage"
+  - "s3"
+  categories:
+  - "data"
+  status: "development"
