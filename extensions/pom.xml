@@ -126,6 +126,8 @@
 
         <!-- vault -->
         <module>vault</module>
+
+	<!-- object-storage -->	
         <module>object-storage</module>
     </modules>
 
