@@ -3,6 +3,7 @@ package io.quarkus.kubernetes.deployment;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.OptionalInt;
 
 import io.dekorate.kubernetes.annotation.ImagePullPolicy;
 import io.dekorate.kubernetes.annotation.ServiceType;
@@ -94,6 +95,12 @@ public class KubernetesConfig implements PlatformConfiguration {
      */
     @ConfigItem
     Map<String, PortConfig> ports;
+
+    /**
+     * The number of desired pods
+     */
+    @ConfigItem
+    OptionalInt replicas;
 
     /**
      * The type of service that will be generated for the application
@@ -250,6 +257,10 @@ public class KubernetesConfig implements PlatformConfiguration {
 
     public Map<String, PortConfig> getPorts() {
         return ports;
+    }
+
+    public OptionalInt getReplicas() {
+        return replicas;
     }
 
     public ServiceType getServiceType() {

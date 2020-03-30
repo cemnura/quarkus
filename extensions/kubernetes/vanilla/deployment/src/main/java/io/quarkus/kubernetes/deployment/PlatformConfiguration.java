@@ -4,6 +4,7 @@ package io.quarkus.kubernetes.deployment;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
+import java.util.OptionalInt;
 
 import io.dekorate.kubernetes.annotation.ImagePullPolicy;
 import io.dekorate.kubernetes.annotation.ServiceType;
@@ -35,6 +36,8 @@ public interface PlatformConfiguration {
     Optional<String> getHost();
 
     Map<String, PortConfig> getPorts();
+
+    OptionalInt getReplicas();
 
     ServiceType getServiceType();
 
