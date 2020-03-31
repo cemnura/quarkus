@@ -63,6 +63,7 @@ public class KubernetesConfigUtil {
             p.getPartOf().ifPresent(g -> quarkusPrefixed.put(DEKORATE_PREFIX + p.getConfigName() + ".part-of", g));
             p.getName().ifPresent(n -> quarkusPrefixed.put(DEKORATE_PREFIX + p.getConfigName() + ".name", n));
             p.getVersion().ifPresent(v -> quarkusPrefixed.put(DEKORATE_PREFIX + p.getConfigName() + ".version", v));
+            p.getReplicas().ifPresent(r -> quarkusPrefixed.put(DEKORATE_PREFIX + p.getConfigName() + ".replicas", r));
         });
 
         Map<String, Object> unPrefixed = StreamSupport.stream(config.getPropertyNames().spliterator(), false)
