@@ -57,6 +57,7 @@
                 <configuration>
                     <cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
                     <cloneClean>true</cloneClean>
+                    <preBuildHookScript>setup</preBuildHookScript>
                     <postBuildHookScript>verify</postBuildHookScript>
                     <addTestClassPath>true</addTestClassPath>
                     <skipInvocation>${skipTests}</skipInvocation>
