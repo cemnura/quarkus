@@ -30,6 +30,7 @@
         <module>vault</module>
         <module>ldap</module>
         <module>security</module>
+        <module>keycloak</module>
     </modules>
 
 </project>
