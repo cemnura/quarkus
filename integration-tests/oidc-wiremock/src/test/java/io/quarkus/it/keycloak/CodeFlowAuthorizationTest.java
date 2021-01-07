@@ -1,22 +1,21 @@
 package io.quarkus.it.keycloak;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import java.io.IOException;
-import java.net.URI;
-
-import org.junit.jupiter.api.Test;
-
+import com.gargoylesoftware.htmlunit.SilentCssErrorHandler;
 import com.gargoylesoftware.htmlunit.WebClient;
 import com.gargoylesoftware.htmlunit.WebRequest;
 import com.gargoylesoftware.htmlunit.WebResponse;
 import com.gargoylesoftware.htmlunit.html.HtmlForm;
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
 import com.gargoylesoftware.htmlunit.util.Cookie;
-
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
+import org.junit.jupiter.api.Test;
+
+import java.io.IOException;
+import java.net.URI;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 
 @QuarkusTest
 @QuarkusTestResource(KeycloakTestResource.class)
@@ -56,7 +55,7 @@ public class CodeFlowAuthorizationTest {
 
     private WebClient createWebClient() {
         WebClient webClient = new WebClient();
-        //webClient.setCssErrorHandler(new SilentCssErrorHandler());
+        webClient.setCssErrorHandler(new SilentCssErrorHandler());
         return webClient;
     }
 
