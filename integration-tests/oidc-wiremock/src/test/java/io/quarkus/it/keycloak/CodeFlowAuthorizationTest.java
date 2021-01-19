@@ -60,14 +60,13 @@ public class CodeFlowAuthorizationTest {
     }
 
     private void verifyLocationHeader(WebClient webClient, String loc, String tenant, String path, boolean forceHttps) {
-        assertTrue(loc.startsWith("http://localhost:8180/auth/realms/quarkus/protocol/openid-connect/auth"));
+        assertTrue(loc.contains("/auth"));
         String scheme = forceHttps ? "https" : "http";
         assertTrue(loc.contains("redirect_uri=" + scheme + "%3A%2F%2Flocalhost%3A8081%2F" + path));
         assertTrue(loc.contains("state=" + getStateCookieStateParam(webClient, tenant)));
         assertTrue(loc.contains("scope=openid+profile+email+phone"));
         assertTrue(loc.contains("response_type=code"));
         assertTrue(loc.contains("client_id=quarkus-app"));
-        assertTrue(loc.contains("max-age=60"));
     }
 
     private String getStateCookieSavedPath(WebClient webClient, String tenantId) {
