@@ -37,6 +37,7 @@
         <module>ldap</module>
         <module>security</module>
         <module>jacoco</module>
+        <module>keycloak</module>
     </modules>
 
 </project>

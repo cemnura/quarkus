@@ -13,9 +13,10 @@ import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 import io.quarkus.test.common.QuarkusTestResource;
 import io.quarkus.test.junit.QuarkusTest;
+import io.quarkus.test.keycloak.KeycloakTestResourceLifecycleManager;
 
 @QuarkusTest
-@QuarkusTestResource(KeycloakTestResource.class)
+@QuarkusTestResource(KeycloakTestResourceLifecycleManager.class)
 public class CodeFlowAuthorizationTest {
 
     @Test

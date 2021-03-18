@@ -14,7 +14,7 @@
     <description>Module that contains OpenID Connect related tests using WireMock</description>
 
     <properties>
-        <keycloak.url>http://localhost:8180/auth</keycloak.url>
+        <keycloak.url>http://localhost:8000</keycloak.url>
     </properties>
 
     <dependencies>
@@ -31,6 +31,11 @@
         <dependency>
             <groupId>io.quarkus</groupId>
             <artifactId>quarkus-junit5</artifactId>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-test-keycloak</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
